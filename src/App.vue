@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import data from '@emoji-mart/data'
-import EmojiPicker from '@/packages/emoji-mart-vue/index.vue'
+import markdownit from 'markdown-it'
+import { ref } from 'vue'
+import readmeMd from './readme.md?raw'
+
+const readme = ref('')
+const md = markdownit({
+  html: true,
+  linkify: true,
+  typographer: true
+})
+
+readme.value = md.render(readmeMd)
 </script>
 
 <template>
@@ -10,7 +21,7 @@ import EmojiPicker from '@/packages/emoji-mart-vue/index.vue'
       基于Emoji-Mart v5.5.2的Vue3+TS组件，可以直接在Vue3+TS项目中引用，并映射所有Emoji-Mart的Props。
     </div>
     <div class="emoji-picker-container">
-      <EmojiPicker
+      <EmojiMartPicker
         :data="data"
         locale="zh"
         searchPosition="sticky"
@@ -18,10 +29,12 @@ import EmojiPicker from '@/packages/emoji-mart-vue/index.vue'
         previewPosition="none"
       />
     </div>
+    <div class="install-doc markdown-body" v-html="readme"></div>
   </div>
 </template>
 
 <style>
+@import './github-markdown-light.css';
 html,
 body {
   padding: 0;
@@ -31,8 +44,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
   font-family:
     Quotes,
     -apple-system,
@@ -52,6 +66,7 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
+  padding-bottom: 30px;
 }
 
 .component-title {
@@ -64,6 +79,7 @@ body {
   line-height: 1.25;
   font-weight: 900;
   margin-bottom: 30px;
+  margin-top: 20vh;
 }
 
 .component-desc {
@@ -72,5 +88,10 @@ body {
   transition: color 0.5s;
   font-size: 22px;
   margin: 24px auto 40px;
+}
+
+.install-doc {
+  width: 100%;
+  margin-top: 30px;
 }
 </style>
