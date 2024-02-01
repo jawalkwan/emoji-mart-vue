@@ -1,8 +1,16 @@
 {
-  "name": "vue-project",
-  "version": "0.0.0",
-  "private": true,
+  "name": "emoji-mart-vue",
+  "version": "1.0.0",
+  "private": false,
   "type": "module",
+  "main": "./dist/emoji-mart-vue.umd.cjs",
+  "module": "./dist/emoji-mart-vue.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/emoji-mart-vue.es.js",
+      "require": "./dist/emoji-mart-vue.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

@@ -12,9 +12,9 @@ npm install @emoji-mart/data  // emoji-mart数据
 ## 🪅 安装
 
 ```bash
-[npm] npm install emoji-mart-vue3
-[yarn] yarn add emoji-mart-vue3
-[pnpm] pnpm add emoji-mart-vue3
+[npm] npm install emoji-mart-vue
+[yarn] yarn add emoji-mart-vue
+[pnpm] pnpm add emoji-mart-vue
 ```
 
 ## 🪅 引入
@@ -22,7 +22,7 @@ npm install @emoji-mart/data  // emoji-mart数据
 `main.ts`
 
 ```typescript
-import EmojiMartPicker from 'emoji-mart-vue3'
+import EmojiMartPicker from 'emoji-mart-vue'
 app.use(EmojiMartPicker)
 ```
 
