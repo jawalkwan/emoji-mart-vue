@@ -1,16 +1,34 @@
 {
-  "name": "emoji-mart-vue",
-  "version": "1.0.0",
+  "name": "emoji-mart-vue3",
+  "version": "1.0.1",
+  "description": "基于Emoji-Mart v5.5.2的Vue3+TS组件，可以直接在Vue3+TS项目中引用，并映射所有Emoji-Mart的Props。",
+  "keywords": [
+    "vue",
+    "vue3",
+    "emoji",
+    "emoji-mart",
+    "emoji-mart-vue",
+    "emoji-mart-ts",
+    "typescript"
+  ],
+  "author": "jawalKwan",
+  "license": "MIT",
   "private": false,
-  "type": "module",
-  "main": "./dist/emoji-mart-vue.umd.cjs",
-  "module": "./dist/emoji-mart-vue.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/emoji-mart-vue.es.js",
-      "require": "./dist/emoji-mart-vue.umd.cjs"
-    }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jawalkwan/emoji-mart-vue"
   },
+  "bugs": {
+    "url": "https://github.com/jawalkwan/emoji-mart-vue/issues"
+  },
+  "homepage": "https://github.com/jawalkwan/emoji-mart-vue",
+  "type": "module",
+  "main": "./dist/emoji-mart-vue.js",
+  "module": "./dist/emoji-mart-vue.umd.cjs",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -26,6 +44,7 @@
     "emoji-mart": "^5.5.2",
     "markdown-it": "^14.0.0",
     "pinia": "^2.1.7",
+    "vite-plugin-dts": "^3.7.2",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },
