@@ -32,6 +32,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "build-page": "vite build --config page.config.ts",
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
